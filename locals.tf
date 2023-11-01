@@ -14,19 +14,18 @@ locals {
       security_group = [aws_security_group.regular.id]
 
     }
-    "mydopslinx03" = {
+    "mdopslinx03" = {
       ami            = var.amis["Ubuntu"]
-      instance_type  = var.type
+      instance_type  = "t2.small"
       security_group = [aws_security_group.regular.id]
 
-      name = "mydopslinx03-ELK"
+      name = "mdopslinx03-ELK"
 
     }
     "mydopslinx04" = {
       ami            = var.amis["Ubuntu"]
       instance_type  = var.type
       security_group = [aws_security_group.regular.id]
-
       name = "mydopslinx04-PRO/GRF"
     }
     "myddevlinx01" = {

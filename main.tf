@@ -3,6 +3,16 @@ resource "aws_key_pair" "vprofile-prod-key" {
   public_key = file("project.pub")
 }
 
+resource "aws_ebs_volume" "elk" {
+  availability_zone = aws_instance.project-instances["mdopslinx03"].availability_zone
+  size              = 13
+}
+
+resource "aws_volume_attachment" "ebs_att" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.elk.id
+  instance_id = aws_instance.project-instances["mdopslinx03"].id
+}
 
 resource "aws_instance" "project-instances" {
   for_each = local.instances

@@ -1,4 +1,4 @@
-
+/*
 resource "null_resource" "remote_exec" {
 
   connection {
@@ -8,7 +8,7 @@ resource "null_resource" "remote_exec" {
     host        = aws_instance.project-instances["myddevlinx02"].public_ip
   }
 
-   
+
 
 
   provisioner "remote-exec" {
@@ -18,5 +18,5 @@ resource "null_resource" "remote_exec" {
     ]
   }
 }
-
+*/
 

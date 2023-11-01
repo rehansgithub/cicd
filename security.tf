@@ -1,4 +1,4 @@
- /*
+/*
 resource "aws_security_group" "jenkins" {
   name        = "jenkins-project-sg"
   description = "for jenkins"
